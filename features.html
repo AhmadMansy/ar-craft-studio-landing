@@ -1,0 +1,362 @@
+<html><head><base href="https://ARCraftStudio.com/features">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features | ARCraft Studio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #4361EE;
+  --secondary: #3A0CA3;
+  --accent: #4CC9F0;
+  --dark: #2B2D42;
+  --light: #F8F9FA;
+  --success: #2ECC71;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 5%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.hero {
+  padding: 8rem 5% 4rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(76, 201, 240, 0.1));
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #666;
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 4rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon svg {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.feature-description {
+  color: #666;
+  line-height: 1.6;
+}
+
+.demo-section {
+  padding: 4rem 5%;
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(76, 201, 240, 0.05));
+  text-align: center;
+}
+
+.demo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.demo-video {
+  width: 100%;
+  height: 500px;
+  background: var(--dark);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.floating-element {
+  position: absolute;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  animation: float 20s infinite linear;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(100px, 100px) rotate(360deg);
+  }
+}
+
+.cta-section {
+  text-align: center;
+  padding: 4rem 5%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: white;
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  margin-top: 2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .demo-video {
+    height: 300px;
+  }
+}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="/" class="logo">ARCraft Studio</a>
+    <div class="nav-links">
+      <a href="/features" class="nav-link">Features</a>
+      <a href="/pricing" class="nav-link">Pricing</a>
+      <a href="/gallery" class="nav-link">Gallery</a>
+      <a href="/docs" class="nav-link">Docs</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1 class="hero-title">Create Stunning AR Experiences</h1>
+    <p class="hero-subtitle">Discover how ARCraft Studio empowers creators to build immersive augmented reality content without coding knowledge.</p>
+  </section>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <h3 class="feature-title">Drag & Drop Editor</h3>
+      <p class="feature-description">Create AR experiences effortlessly with our intuitive drag-and-drop interface. No coding required.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <path d="M22 6l-10 7L2 6"/>
+        </svg>
+      </div>
+      <h3 class="feature-title">Template Library</h3>
+      <p class="feature-description">Access hundreds of pre-built templates to jumpstart your AR projects.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 16v-4M12 8h.01"/>
+        </svg>
+      </div>
+      <h3 class="feature-title">Real-time Preview</h3>
+      <p class="feature-description">Test your AR experiences in real-time with our built-in preview functionality.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </div>
+      <h3 class="feature-title">Custom Animations</h3>
+      <p class="feature-description">Add life to your AR content with our extensive animation library and custom animation tools.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <h3 class="feature-title">3D Asset Library</h3>
+      <p class="feature-description">Access thousands of ready-to-use 3D models and assets for your AR projects.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+        </svg>
+      </div>
+      <h3 class="feature-title">Analytics Dashboard</h3>
+      <p class="feature-description">Track user engagement and performance metrics with our comprehensive analytics tools.</p>
+    </div>
+  </div>
+
+  <section class="demo-section">
+    <div class="demo-container">
+      <div class="demo-video">
+        <div class="floating-elements">
+          <div class="floating-element" style="width: 100px; height: 100px; top: 20%; left: 30%;"></div>
+          <div class="floating-element" style="width: 80px; height: 80px; top: 60%; left: 70%;"></div>
+          <div class="floating-element" style="width: 120px; height: 120px; top: 40%; left: 50%;"></div>
+        </div>
+      </div>
+      <h2>See ARCraft Studio in Action</h2>
+      <p>Watch how easy it is to create professional AR experiences in minutes.</p>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Create Amazing AR Experiences?</h2>
+    <p>Start your free trial today and join thousands of creators who trust ARCraft Studio.</p>
+    <a href="/pricing" class="cta-button">Start Free Trial</a>
+  </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Animate floating elements
+  const elements = document.querySelectorAll('.floating-element');
+  elements.forEach((el, index) => {
+    el.style.animation = `float ${15 + index * 5}s infinite linear`;
+    el.style.animationDelay = `${index * 2}s`;
+  });
+
+  // Add scroll reveal animation to feature cards
+  const cards = document.querySelectorAll('.feature-card');
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  cards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'all 0.6s ease-out';
+    card.style.transitionDelay = `${index * 0.1}s`;
+    observer.observe(card);
+  });
+});
+</script>
+</body></html>

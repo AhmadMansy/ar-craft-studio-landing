@@ -1,0 +1,402 @@
+<html><head><base href="https://ARCraftStudio.com/docs">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentation | ARCraft Studio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --primary: #4361EE;
+  --secondary: #3A0CA3;
+  --accent: #4CC9F0;
+  --dark: #2B2D42;
+  --light: #F8F9FA;
+  --code-bg: #2d2d2d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+  display: flex;
+  min-height: 100vh;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 5%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.sidebar {
+  width: 300px;
+  background: white;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 80px;
+  border-right: 1px solid rgba(0,0,0,0.1);
+  overflow-y: auto;
+}
+
+.sidebar-section {
+  padding: 1rem;
+}
+
+.sidebar-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 0.5rem;
+  padding: 0 1rem;
+}
+
+.sidebar-menu {
+  list-style: none;
+}
+
+.sidebar-item {
+  margin-bottom: 0.2rem;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--dark);
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.sidebar-link:hover {
+  background: rgba(67, 97, 238, 0.1);
+  color: var(--primary);
+}
+
+.sidebar-link.active {
+  background: var(--primary);
+  color: white;
+}
+
+.main-content {
+  margin-left: 300px;
+  padding: 80px 2rem 2rem;
+  flex: 1;
+  max-width: 900px;
+}
+
+.doc-section {
+  margin-bottom: 3rem;
+}
+
+.doc-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.doc-subtitle {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+  color: var(--dark);
+}
+
+.code-block {
+  background: var(--code-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+  color: #fff;
+}
+
+.copy-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.copy-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.tip-box {
+  background: rgba(76, 201, 240, 0.1);
+  border-left: 4px solid var(--accent);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.warning-box {
+  background: rgba(255, 99, 71, 0.1);
+  border-left: 4px solid tomato;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 5px 5px 0;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+  
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="/" class="logo">ARCraft Studio</a>
+    <div class="nav-links">
+      <a href="/features" class="nav-link">Features</a>
+      <a href="/pricing" class="nav-link">Pricing</a>
+      <a href="/gallery" class="nav-link">Gallery</a>
+      <a href="/docs" class="nav-link">Docs</a>
+    </div>
+  </nav>
+
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <h3 class="sidebar-title">Getting Started</h3>
+      <ul class="sidebar-menu">
+        <li class="sidebar-item">
+          <a href="/docs/quickstart" class="sidebar-link active">Quick Start Guide</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="/docs/installation" class="sidebar-link">Installation</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="/docs/basics" class="sidebar-link">AR Basics</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h3 class="sidebar-title">Core Concepts</h3>
+      <ul class="sidebar-menu">
+        <li class="sidebar-item">
+          <a href="/docs/markers" class="sidebar-link">AR Markers</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="/docs/objects" class="sidebar-link">3D Objects</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="/docs/interactions" class="sidebar-link">Interactions</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h3 class="sidebar-title">Advanced Topics</h3>
+      <ul class="sidebar-menu">
+        <li class="sidebar-item">
+          <a href="/docs/custom-shaders" class="sidebar-link">Custom Shaders</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="/docs/animation" class="sidebar-link">Animation System</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="/docs/physics" class="sidebar-link">Physics Engine</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h3 class="sidebar-title">API Reference</h3>
+      <ul class="sidebar-menu">
+        <li class="sidebar-item">
+          <a href="/docs/api/scene" class="sidebar-link">Scene API</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="/docs/api/objects" class="sidebar-link">Objects API</a>
+        </li>
+        <li class="sidebar-item">
+          <a href="/docs/api/events" class="sidebar-link">Events API</a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <section class="doc-section">
+      <h1 class="doc-title">Quick Start Guide</h1>
+      <p>Welcome to ARCraft Studio! This guide will help you create your first AR experience in minutes.</p>
+
+      <h2 class="doc-subtitle">Installation</h2>
+      <p>First, include our SDK in your project:</p>
+      <div class="code-block" style="position: relative;">
+        <button class="copy-btn">Copy</button>
+        <code>
+&lt;script src="https://cdn.arcraft.studio/sdk/latest.js"&gt;&lt;/script&gt;
+        </code>
+      </div>
+
+      <h2 class="doc-subtitle">Create Your First AR Scene</h2>
+      <p>Here's a simple example to get you started:</p>
+      <div class="code-block" style="position: relative;">
+        <button class="copy-btn">Copy</button>
+        <code>
+const arScene = new ARCraft.Scene({
+  container: document.querySelector('#ar-container'),
+  markerPath: '/path/to/marker.png'
+});
+
+// Add a 3D model
+const model = new ARCraft.Model({
+  source: '/path/to/model.gltf',
+  scale: 1.0,
+  position: { x: 0, y: 0, z: 0 }
+});
+
+arScene.add(model);
+
+// Add interaction
+model.on('tap', () => {
+  model.animate({
+    rotation: { y: '+= 360' },
+    duration: 1000
+  });
+});
+        </code>
+      </div>
+
+      <div class="tip-box">
+        <strong>Pro Tip:</strong> Make sure your AR markers have high contrast and distinct patterns for better tracking performance.
+      </div>
+
+      <h2 class="doc-subtitle">Testing Your AR Experience</h2>
+      <p>You can test your AR experience using our built-in development tools:</p>
+      <div class="code-block" style="position: relative;">
+        <button class="copy-btn">Copy</button>
+        <code>
+ARCraft.DevTools.enable({
+  markerPreview: true,
+  debugInfo: true
+});
+        </code>
+      </div>
+
+      <div class="warning-box">
+        <strong>Note:</strong> Remember to disable DevTools before deploying to production.
+      </div>
+    </section>
+  </main>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Copy button functionality
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const codeBlock = btn.nextElementSibling;
+      const code = codeBlock.textContent.trim();
+      
+      navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => {
+          btn.textContent = 'Copy';
+        }, 2000);
+      });
+    });
+  });
+
+  // Mobile sidebar toggle
+  const toggleBtn = document.createElement('button');
+  toggleBtn.innerHTML = '☰';
+  toggleBtn.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    z-index: 1001;
+  `;
+
+  document.body.appendChild(toggleBtn);
+
+  const sidebar = document.querySelector('.sidebar');
+  
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+
+  // Show/hide toggle button based on screen size
+  const updateToggleVisibility = () => {
+    if (window.innerWidth <= 768) {
+      toggleBtn.style.display = 'block';
+    } else {
+      toggleBtn.style.display = 'none';
+      sidebar.classList.remove('active');
+    }
+  };
+
+  window.addEventListener('resize', updateToggleVisibility);
+  updateToggleVisibility();
+});
+</script>
+</body></html>

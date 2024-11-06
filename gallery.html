@@ -1,0 +1,372 @@
+<html><head><base href="https://ARCraftStudio.com/gallery">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | ARCraft Studio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #4361EE;
+  --secondary: #3A0CA3;
+  --accent: #4CC9F0;
+  --dark: #2B2D42;
+  --light: #F8F9FA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 5%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.gallery-hero {
+  padding: 8rem 5% 4rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(76, 201, 240, 0.1));
+}
+
+.gallery-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  background: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+}
+
+.gallery-img {
+  width: 100%;
+  height: 250px;
+  background: #eee;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+}
+
+.gallery-content {
+  padding: 1.5rem;
+}
+
+.gallery-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.8rem;
+  background: rgba(67, 97, 238, 0.1);
+  color: var(--primary);
+  border-radius: 15px;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90vh;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .gallery-title {
+    font-size: 2.5rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="/" class="logo">ARCraft Studio</a>
+    <div class="nav-links">
+      <a href="/features" class="nav-link">Features</a>
+      <a href="/pricing" class="nav-link">Pricing</a>
+      <a href="/gallery" class="nav-link">Gallery</a>
+      <a href="/docs" class="nav-link">Docs</a>
+    </div>
+  </nav>
+
+  <section class="gallery-hero">
+    <h1 class="gallery-title">Community Showcase</h1>
+    <p>Discover amazing AR experiences created by our community</p>
+    
+    <div class="filters">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Education</button>
+      <button class="filter-btn">Entertainment</button>
+      <button class="filter-btn">Marketing</button>
+      <button class="filter-btn">Architecture</button>
+      <button class="filter-btn">Gaming</button>
+    </div>
+  </section>
+
+  <div class="gallery-grid">
+    <!-- Gallery Items -->
+  </div>
+
+  <div class="modal" id="projectModal">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+<script>
+const galleryData = [
+  {
+    id: 1,
+    title: "Interactive Solar System",
+    creator: "SpaceED",
+    description: "Educational AR experience showcasing planets and their movements",
+    category: "Education",
+    tags: ["Education", "Space", "Science"],
+    likes: 1234,
+    views: 5678
+  },
+  {
+    id: 2,
+    title: "Virtual Fashion Try-On",
+    creator: "FashionTech",
+    description: "Try clothes virtually using AR technology",
+    category: "Marketing",
+    tags: ["Fashion", "Retail", "Shopping"],
+    likes: 2345,
+    views: 8901
+  },
+  {
+    id: 3,
+    title: "AR Gaming Quest",
+    creator: "GameMaster",
+    description: "Interactive AR game with treasure hunting elements",
+    category: "Gaming",
+    tags: ["Gaming", "Adventure", "Interactive"],
+    likes: 3456,
+    views: 9012
+  },
+  // Add more items as needed
+];
+
+function createGalleryItem(item) {
+  return `
+    <div class="gallery-item" data-category="${item.category}">
+      <div class="gallery-img">
+        <div class="gallery-overlay">
+          <h3>${item.title}</h3>
+          <p>by ${item.creator}</p>
+        </div>
+      </div>
+      <div class="gallery-content">
+        <div class="gallery-tags">
+          ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        </div>
+        <p>${item.description}</p>
+        <div class="likes">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span>${item.likes}</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 1rem;">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <span>${item.views}</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const gallery = document.querySelector('.gallery-grid');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const modal = document.getElementById('projectModal');
+  
+  // Populate gallery
+  gallery.innerHTML = galleryData.map(item => createGalleryItem(item)).join('');
+  
+  // Filter functionality
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      const category = btn.textContent;
+      const items = document.querySelectorAll('.gallery-item');
+      
+      items.forEach(item => {
+        if (category === 'All' || item.dataset.category === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+  
+  // Modal functionality
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      // Populate modal content based on clicked item
+      const itemData = galleryData.find(data => data.id === parseInt(item.dataset.id));
+      document.getElementById('modalContent').innerHTML = `
+        <div style="padding: 2rem;">
+          <h2>${itemData?.title || 'Project Details'}</h2>
+          <p>${itemData?.description || 'Loading...'}</p>
+        </div>
+      `;
+    });
+  });
+  
+  document.querySelector('.close-modal').addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+  
+  // Close modal when clicking outside
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+</script>
+</body></html>

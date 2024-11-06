@@ -1,0 +1,390 @@
+<html><head><base href="https://ARCraftStudio.com/pricing">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing Plans | ARCraft Studio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #4361EE;
+  --secondary: #3A0CA3;
+  --accent: #4CC9F0;
+  --dark: #2B2D42;
+  --light: #F8F9FA;
+  --success: #2ECC71;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 5%;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.pricing-header {
+  text-align: center;
+  padding: 8rem 1rem 4rem;
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(76, 201, 240, 0.1));
+}
+
+.pricing-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-subtitle {
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.pricing-toggle {
+  background: white;
+  padding: 0.5rem;
+  border-radius: 30px;
+  display: inline-flex;
+  gap: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 3rem;
+}
+
+.toggle-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.toggle-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: transform 0.3s;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.pricing-card.popular {
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.plan-name {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.plan-price {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.price-period {
+  font-size: 1rem;
+  color: #666;
+}
+
+.features-list {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.feature-item {
+  padding: 0.8rem 0;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cta-button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 30px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.secondary-btn {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+@media (max-width: 968px) {
+  .pricing-cards {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 400px;
+  }
+  
+  .pricing-card.popular {
+    transform: none;
+  }
+}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="/" class="logo">ARCraft Studio</a>
+    <div class="nav-links">
+      <a href="/features" class="nav-link">Features</a>
+      <a href="/pricing" class="nav-link">Pricing</a>
+      <a href="/gallery" class="nav-link">Gallery</a>
+      <a href="/docs" class="nav-link">Docs</a>
+    </div>
+  </nav>
+
+  <section class="pricing-header">
+    <h1 class="pricing-title">Simple, Transparent Pricing</h1>
+    <p class="pricing-subtitle">Choose the perfect plan for your AR creation needs. All plans include our core features with no hidden costs.</p>
+    
+    <div class="pricing-toggle">
+      <button class="toggle-btn" id="monthlyBtn">Monthly</button>
+      <button class="toggle-btn active" id="yearlyBtn">Yearly (Save 20%)</button>
+    </div>
+  </section>
+
+  <div class="pricing-cards">
+    <div class="pricing-card">
+      <h2 class="plan-name">Starter</h2>
+      <div class="plan-price">
+        <span class="price-amount">$19</span>
+        <span class="price-period">/month</span>
+      </div>
+      <ul class="features-list">
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+            <path d="M20 6L9 17l-5-5" stroke-linecap="round"/>
+          </svg>
+          5 AR Projects
+        </li>
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+            <path d="M20 6L9 17l-5-5" stroke-linecap="round"/>
+          </svg>
+          Basic Templates
+        </li>
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+            <path d="M20 6L9 17l-5-5" stroke-linecap="round"/>
+          </svg>
+          Community Support
+        </li>
+      </ul>
+      <button class="cta-button secondary-btn">Start Free Trial</button>
+    </div>
+
+    <div class="pricing-card popular">
+      <div class="popular-badge">Most Popular</div>
+      <h2 class="plan-name">Professional</h2>
+      <div class="plan-price">
+        <span class="price-amount">$49</span>
+        <span class="price-period">/month</span>
+      </div>
+      <ul class="features-list">
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+            <path d="M20 6L9 17l-5-5" stroke-linecap="round"/>
+          </svg>
+          Unlimited AR Projects
+        </li>
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+            <path d="M20 6L9 17l-5-5" stroke-linecap="round"/>
+          </svg>
+          Premium Templates
+        </li>
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+            <path d="M20 6L9 17l-5-5" stroke-linecap="round"/>
+          </svg>
+          Priority Support
+        </li>
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+            <path d="M20 6L9 17l-5-5" stroke-linecap="round"/>
+          </svg>
+          Analytics Dashboard
+        </li>
+      </ul>
+      <button class="cta-button primary-btn">Start Free Trial</button>
+    </div>
+
+    <div class="pricing-card">
+      <h2 class="plan-name">Enterprise</h2>
+      <div class="plan-price">
+        <span class="price-amount">$199</span>
+        <span class="price-period">/month</span>
+      </div>
+      <ul class="features-list">
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+            <path d="M20 6L9 17l-5-5" stroke-linecap="round"/>
+          </svg>
+          Custom Solutions
+        </li>
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+            <path d="M20 6L9 17l-5-5" stroke-linecap="round"/>
+          </svg>
+          Dedicated Support
+        </li>
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+            <path d="M20 6L9 17l-5-5" stroke-linecap="round"/>
+          </svg>
+          API Access
+        </li>
+        <li class="feature-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+            <path d="M20 6L9 17l-5-5" stroke-linecap="round"/>
+          </svg>
+          Custom Branding
+        </li>
+      </ul>
+      <button class="cta-button secondary-btn">Contact Sales</button>
+    </div>
+  </div>
+
+<script>
+const monthlyBtn = document.getElementById('monthlyBtn');
+const yearlyBtn = document.getElementById('yearlyBtn');
+const priceAmounts = document.querySelectorAll('.price-amount');
+const pricePeriods = document.querySelectorAll('.price-period');
+
+const prices = {
+  monthly: ['$19', '$49', '$199'],
+  yearly: ['$15', '$39', '$159']
+};
+
+monthlyBtn.addEventListener('click', () => {
+  monthlyBtn.classList.add('active');
+  yearlyBtn.classList.remove('active');
+  priceAmounts.forEach((price, index) => {
+    price.textContent = prices.monthly[index];
+  });
+  pricePeriods.forEach(period => {
+    period.textContent = '/month';
+  });
+});
+
+yearlyBtn.addEventListener('click', () => {
+  yearlyBtn.classList.add('active');
+  monthlyBtn.classList.remove('active');
+  priceAmounts.forEach((price, index) => {
+    price.textContent = prices.yearly[index];
+  });
+  pricePeriods.forEach(period => {
+    period.textContent = '/month, billed yearly';
+  });
+});
+
+// Add hover effect to pricing cards
+document.querySelectorAll('.pricing-card').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    if (!card.classList.contains('popular')) {
+      card.style.transform = 'translateY(-10px)';
+    }
+  });
+
+  card.addEventListener('mouseleave', () => {
+    if (!card.classList.contains('popular')) {
+      card.style.transform = 'translateY(0)';
+    }
+  });
+});
+</script>
+</body></html>
